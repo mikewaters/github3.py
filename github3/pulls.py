@@ -186,7 +186,7 @@ class PullRequest(GitHubCore):
         #: GitHub.com url for review comments (not a template)
         self.review_comments_url = pull.get('review_comments_url')
 
-        m = match('https://[\w\d\-\.\:]+/(\S+)/(\S+)/(?:issues|pull)?/\d+',
+        m = match('http[s]?://[\w\d\-\.\:]+/(\S+)/(\S+)/(?:issues|pull)?/\d+',
                   self.issue_url)
         #: Returns ('owner', 'repository') this issue was filed on.
         self.repository = m.groups()
